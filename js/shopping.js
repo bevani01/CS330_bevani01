@@ -8,8 +8,13 @@ function  clickedon() {
     let price = document.querySelector("#priceitem").value;
     let mytable = document.querySelector("#shoplist")
     lst = [name, quantity, priority, store, section, price];
+    let cb = document.createElement("input")
     let row = document.createElement("tr")
+    cb.type = "checkbox"
+    cb.classList.add("form-control")
+    row.appendChild(cb)
     for (p in lst) {
+        
         let cell = document.createElement("td")
         cell.innerHTML = lst[p]
         row.appendChild(cell)

@@ -12,24 +12,30 @@ class Item {
 
     }
 
-}
-
-class ShoppingList {
-    constructor() {
-        this.newItems = []
-        this.oldItems = [];
+    get purchased() {
+        return this._purchased;
     }
 
-    addItem(it) {
-        this.newItems.push(it)
+    set purchased(nv) {
+        this._purchased = nv;
+        alert(`${this.name} was purchased`)
     }
+
+
+
 }
+
 class Subject {
+
     constructor() {
         this.handlers = []
-
     }
+
     subscribe(fn) {
+            this.handlers.push(fn);
+        }
+
+    unsubscribe(fn) {
         this.handlers = this.handlers.filter(
             function(item) {
                 if (item !== fn) {
@@ -38,7 +44,8 @@ class Subject {
             }
         );
     }
-    publish(msg, someobj){
+
+    publish(msg, someobj) {
         var scope = someobj || window;
         for (let fn of this.handlers) {
             fn(scope, msg)
@@ -46,15 +53,16 @@ class Subject {
     }
 }
 
+
 class ShoppingList extends Subject {
     constructor() {
         super()
         this.newItems = []
-        this.oldItems = []
-
+        this.oldItems = [];
     }
+
     addItem(it) {
-        this.newItems(push)
-        
+        this.newItems.push(it)
+        this.publish('newitem', this)
     }
 }

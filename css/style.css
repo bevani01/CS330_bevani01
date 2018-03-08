@@ -9,3 +9,12 @@ select {
 tr {
 	margin-left: 50px;
 }
+.green {
+	background: green;
+}
+.yellow {
+	background: yellow;
+}
+.red {
+	background: red;
+}

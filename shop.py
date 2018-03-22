@@ -9,4 +9,3 @@ def shop():
 
 	return jsonify(lst1+lst2)
 
-app.run(debug=True, port=5001)

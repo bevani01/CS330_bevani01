@@ -1,0 +1,11 @@
+div {
+	display: inline block;
+	padding-left: 20px;
+	margin-left: 20px;
+}
+select {
+	margin-left: 20px;
+}
+tr {
+	margin-left: 50px;
+}
